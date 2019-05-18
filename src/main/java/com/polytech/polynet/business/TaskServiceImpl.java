@@ -17,8 +17,12 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void share(Task task) {
-        taskRepository.save(task);
+    public void insertTask(Task task) {
+        taskRepository.insertTask(task);
     }
+
+    @Override
+    public void deleteTask(Task task) { taskRepository.deleteTask(task); }
+
 
 }

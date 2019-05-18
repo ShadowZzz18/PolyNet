@@ -1,11 +1,12 @@
 package com.polytech.polynet.business;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tasks")
 
-public class Task {
+public class Task{
 
     @Id
     @Column(name = "ID")
@@ -14,6 +15,9 @@ public class Task {
 
     @Column(name = "content")
     private String content;
+
+    @Column(name="username")
+    private String username;
 
     public Task() {}
 
@@ -25,6 +29,12 @@ public class Task {
 
         this.id = id;
         this.content = content;
+    }
+
+    public Task(String content, String username) {
+
+        this.content = content;
+        this.username = username;
     }
 
     public String getContent() {
@@ -50,4 +60,11 @@ public class Task {
         this.id = id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

@@ -22,11 +22,15 @@ public class TaskController {
         return taskService.getTasks();
     }
 
-    @PostMapping("/story")
-    public void share(@RequestBody String content){
-        taskService.share(new Task(content));
+    @PostMapping("/insertTask")
+    public void insertTask(@RequestBody Task task){
+        taskService.insertTask(task);
         }
 
+    @PostMapping("/deleteTask")
+    public void deleteTask(@RequestBody Task task) {
+        taskService.deleteTask(task);
+    }
 }
 
 
