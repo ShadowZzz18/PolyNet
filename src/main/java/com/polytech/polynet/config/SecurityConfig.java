@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .mvcMatchers("/").permitAll()
                 //.anyRequest().authenticated()
-                .and().formLogin().loginPage("/login.html").successForwardUrl("/feed.html")
+                .and().formLogin().loginPage("/login.html").successForwardUrl("/index.html")
                 .and().csrf().disable();
     }
 
