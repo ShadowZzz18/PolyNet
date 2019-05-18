@@ -22,7 +22,7 @@ public class AccountController {
     }
 
     @PostMapping("/register")
-    public void register(@RequestBody User user){
+    public void register(@RequestBody User user) {
         System.out.println(user);
         accountService.register(user);
     }

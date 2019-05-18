@@ -1,12 +1,11 @@
 package com.polytech.polynet.business;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "tasks")
 
-public class Task{
+public class Task {
 
     @Id
     @Column(name = "ID")
