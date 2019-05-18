@@ -26,9 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .mvcMatchers("/", "/feed.html","/register").permitAll()
-                //.mvcMatchers("/admin/*").hasRole("Admin")
                 //.anyRequest().authenticated()
-                //.and().formLogin().successForwardUrl("/feed")
+                .and().formLogin().loginPage("/login.html").successForwardUrl("/feed.html")
                 .and().csrf().disable();
     }
 
