@@ -8,6 +8,8 @@
     <meta name="author" content="">
     <title>Starter Template for Bootstrap</title>
 
+    <link rel="stylesheet" href="./css/index.css">
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -17,17 +19,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="./js/controller.js"></script>
-
-    <!-- Custom styles for this template -->
-    <style>
-        body {
-            padding-top: 50px;
-        }
-        .starter-template {
-            padding: 40px 15px;
-            text-align: center;
-        }
-    </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -81,26 +72,6 @@
             <button type="button" class="btn btn-danger" ng-click="deleteTask($index)">Delete</button>
             <hr>
         </ul>
-
-        <!--
-        <div class="row">
-            <ul class="list-group col-md-12" ng-repeat="task in stories">
-                <li class="list-group-item active">
-                        <div class="input-group mb-3">
-                            {{task.content}}
-                            <input type="text" placeholder="Laissez un petit commentaire" class="form-control col-md-2 desc-task"
-                                   ng-model="com"">
-                            <div class="input-group-append">
-                                <button class="btn btn-success" type="button" ng-click="push()"><i
-                                        class="fas fa-plus-square icon-add-task"></i></button>
-                            </div>
-                        </div>
-                </li>
-                <li class="list-group-item" ng-repeat="commentaire in task.list">{{commentaire.content}}</li>
-                <hr>
-            </ul>
-        </div>
-        -->
 
     </div>
 
