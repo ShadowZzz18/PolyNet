@@ -17,7 +17,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         auth.jdbcAuthentication().dataSource(datasource)
                 .passwordEncoder(passwordEncoder);
@@ -32,4 +31,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.and().formLogin().successForwardUrl("/feed")
                 .and().csrf().disable();
     }
+
 }

@@ -5,6 +5,8 @@ import com.polytech.polynet.business.TaskService;
 import com.polytech.polynet.business.TaskServiceImpl;
 import com.polytech.polynet.business.AccountService;
 import com.polytech.polynet.business.AccountServiceImpl;
+import com.polytech.polynet.repository.AccountRepository;
+import com.polytech.polynet.repository.JpaAccountRepository;
 import com.polytech.polynet.repository.JpaTaskRepository;
 import com.polytech.polynet.repository.TaskRepository;
 import org.springframework.context.annotation.Bean;
@@ -16,13 +18,23 @@ import javax.sql.DataSource;
 public class AppConfig {
 
     @Bean
-    TaskRepository storyRepository() {
+    TaskRepository taskRepository() {
         return new JpaTaskRepository(datasource());
     }
 
     @Bean
-    TaskService feedService() {
-        return new TaskServiceImpl(storyRepository());
+    AccountRepository accountRepository() {
+        return new JpaAccountRepository(datasource());
+    }
+
+    @Bean
+    TaskService taskService() {
+        return new TaskServiceImpl(taskRepository());
+    }
+
+    @Bean
+    AccountService accountService() {
+        return new AccountServiceImpl(accountRepository());
     }
 
     @Bean
@@ -35,8 +47,4 @@ public class AppConfig {
         return dataSource;
     }
 
-    @Bean
-    AccountService publicationService() {
-        return new AccountServiceImpl(storyRepository());
-    }
 }

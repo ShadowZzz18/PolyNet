@@ -1,26 +1,24 @@
 package com.polytech.polynet.business;
 
-
-import com.polytech.polynet.repository.TaskRepository;
-
+import com.polytech.polynet.repository.AccountRepository;
 import java.util.List;
 
 public class AccountServiceImpl implements AccountService {
 
-    private TaskRepository taskRepository;
+    private AccountRepository accountRepository;
 
-    public AccountServiceImpl(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+    public AccountServiceImpl(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
     }
 
     @Override
     public void register(User user) {
-        taskRepository.register(user);
+        accountRepository.register(user);
     }
 
     @Override
     public List<User> getUsers() {
-        return taskRepository.findAllUsers();
+        return accountRepository.findAllUsers();
     }
 
 }

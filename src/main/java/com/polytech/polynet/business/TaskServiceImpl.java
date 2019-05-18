@@ -4,6 +4,7 @@ import com.polytech.polynet.repository.TaskRepository;
 import java.util.List;
 
 public class TaskServiceImpl implements TaskService {
+
     private TaskRepository taskRepository;
 
     public TaskServiceImpl(TaskRepository taskRepository) {
@@ -19,6 +20,5 @@ public class TaskServiceImpl implements TaskService {
     public void share(Task task) {
         taskRepository.save(task);
     }
-
 
 }

@@ -1,7 +1,6 @@
 package com.polytech.polynet.repository;
 
-
-import com.polytech.polynet.business.Task;
+import com.polytech.polynet.business.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,28 +9,27 @@ import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import java.util.List;
 
-
 @Transactional
-public class JpaTaskRepository implements TaskRepository {
+public class JpaAccountRepository implements AccountRepository {
 
     private DataSource datasource;
 
     @PersistenceContext
     EntityManager entityManager;
 
-    public JpaTaskRepository(DataSource datasource) {
+    public JpaAccountRepository(DataSource datasource) {
         this.datasource = datasource;
     }
 
     @Override
-    public List<Task> findAllTasks() {
-        Query query = entityManager.createQuery("SELECT s FROM Task s");
+    public List<User> findAllUsers() {
+        Query query = entityManager.createQuery("SELECT s FROM User s");
         return query.getResultList();
     }
 
     @Override
-    public void save(Task task) {
-        entityManager.persist(task);
+    public void register(User user) {
+        entityManager.persist(user);
     }
 
 }

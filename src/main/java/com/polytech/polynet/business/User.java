@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "users")
 
 public class User {
+
     @Id
     @Column(name = "username")
     private String username;
@@ -16,8 +17,7 @@ public class User {
     @Column(name = "enabled")
     private int enabled;
 
-    public User(){
-    }
+    public User(){}
 
     public User(String username, String password) {
         this.username = username;
@@ -47,4 +47,5 @@ public class User {
     public void setEnabled(int enabled) {
         this.enabled = enabled;
     }
+
 }

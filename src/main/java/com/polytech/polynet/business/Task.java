@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "tasks")
 
 public class Task {
+
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +15,7 @@ public class Task {
     @Column(name = "content")
     private String content;
 
-    public Task() {
-    }
+    public Task() {}
 
     public Task(String content) {
         this.content = content;
@@ -49,4 +49,5 @@ public class Task {
     public void setId(int id) {
         this.id = id;
     }
+
 }
