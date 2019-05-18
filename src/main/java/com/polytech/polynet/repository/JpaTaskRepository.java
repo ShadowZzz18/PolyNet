@@ -40,4 +40,11 @@ public class JpaTaskRepository implements TaskRepository {
                     .executeUpdate();
     }
 
+    @Override
+    public void updateTask(int id, String content) {
+        TaskEntityManager.createQuery("UPDATE Task SET content = :content WHERE id = :id")
+                .setParameter("content", content)
+                .setParameter("id", id)
+                .executeUpdate();
+    }
 }
