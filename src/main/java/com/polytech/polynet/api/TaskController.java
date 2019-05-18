@@ -28,7 +28,12 @@ public class TaskController {
 
     @PostMapping("/deleteTask")
     public void deleteTask(@RequestBody Task task) {
-        taskService.deleteTask(task);
+        taskService.deleteTask(task.getId());
+    }
+
+    @PostMapping("/updateTask")
+    public void updateTask(@RequestBody Task task){
+        taskService.updateTask(task.getId(),task.getContent());
     }
 
 }

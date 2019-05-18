@@ -10,6 +10,8 @@ public interface TaskRepository {
 
     void insertTask(Task task);
 
-    void deleteTask(Task task);
+    void deleteTask(int id);
+    
+    void updateTask(int id, String content);
 
 }

@@ -68,8 +68,10 @@
         </form>
 
         <ul class="list-group" ng-repeat="task in tasks">
-            <li class="list-group-item active">{{task.content}}</li>
-            <button type="button" class="btn btn-danger" ng-click="deleteTask($index)">Delete</button>
+            <!-- <li class="list-group-item active">{{task.content}}</li> -->
+            <input type="text" class="form-control-plaintext task-name" ng-model="task.content"
+                   ng-change="updateTask($index)" ng-model-options="{debounce: 1000}">
+            <button type="button" class="btn btn-danger" ng-click="deleteTask(task.id)">Delete</button>
             <hr>
         </ul>
 

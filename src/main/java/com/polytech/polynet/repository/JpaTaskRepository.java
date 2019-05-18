@@ -33,10 +33,18 @@ public class JpaTaskRepository implements TaskRepository {
     }
 
     @Override
-    public void deleteTask(Task task) {
-       TaskEntityManager.createQuery("DELETE FROM Task WHERE id = :id")
-               .setParameter("id", task.getId())
-               .executeUpdate();
+    public void deleteTask(int id) {
+        System.out.println("id : " + id);
+        TaskEntityManager.createQuery("DELETE FROM Task WHERE id = :id")
+                    .setParameter("id", id)
+                    .executeUpdate();
     }
 
+    @Override
+    public void updateTask(int id, String content) {
+        TaskEntityManager.createQuery("UPDATE Task SET content = :content WHERE id = :id")
+                .setParameter("content", content)
+                .setParameter("id", id)
+                .executeUpdate();
+    }
 }

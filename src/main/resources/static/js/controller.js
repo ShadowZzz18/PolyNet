@@ -49,9 +49,10 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         $scope.TaskContent = '';
     };
 
-    $scope.deleteTask = function(index) {
+    $scope.deleteTask = function(id) {
+
         var req = {
-            task : $scope.tasks[index]
+            id : id
         };
 
         $http.post('/deleteTask', req).then(function(res) {
@@ -77,5 +78,24 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         });
     };
 
-    $scope.getTasks();
+    $scope.updateTask = function(index){
+
+        var TaskToUpdate = $scope.tasks[index];
+        var contents = document.getElementsByClassName("task-name")
+        TaskToUpdate.content = contents[index].value;
+
+        var req = {
+            id : TaskToUpdate.id,
+            content : TaskToUpdate.content
+        };
+
+        $http.post('/updateTask', req).then(function(res) {
+            console.log("succeed")
+            $scope.getTasks()
+        }, function(res) {
+            console.log("error")
+        })
+    }
+
+    $scope.getTasks()
 });
