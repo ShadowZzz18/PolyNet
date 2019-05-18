@@ -49,10 +49,11 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         $scope.TaskContent = '';
     }
 
-    $scope.deleteTask = function(index) {
+    $scope.deleteTask = function(id) {
+        
         var req = {
-            task : $scope.tasks[index]
-        }
+            id :id
+        };
 
         $http.post('/deleteTask', req).then(function(res) {
             console.log("succeed")

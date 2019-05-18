@@ -8,6 +8,6 @@ public interface TaskRepository {
 
     List<Task> findAllTasks();
     void insertTask(Task task);
-    void deleteTask(Task task);
+    void deleteTask(int id);
 
 }

@@ -6,6 +6,6 @@ public interface TaskService {
 
     List<Task> getTasks();
     void insertTask(Task task);
-    void deleteTask(Task task);
+    void deleteTask(int id);
 
 }

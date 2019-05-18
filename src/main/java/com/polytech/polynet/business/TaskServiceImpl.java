@@ -22,7 +22,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void deleteTask(Task task) { taskRepository.deleteTask(task); }
+    public void deleteTask(int id) { taskRepository.deleteTask(id); }
 
 
 }

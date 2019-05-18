@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .mvcMatchers("/", "/feed.html","/register").permitAll()
+                .mvcMatchers("/").permitAll()
                 //.anyRequest().authenticated()
                 .and().formLogin().loginPage("/login.html").successForwardUrl("/feed.html")
                 .and().csrf().disable();
