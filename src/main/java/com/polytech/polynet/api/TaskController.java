@@ -18,7 +18,6 @@ public class TaskController {
 
     @GetMapping("/getTasks")
     public List<Task> getTasks() {
-        //String username = principal.getName();
         return taskService.getTasks();
     }
 
@@ -31,6 +30,7 @@ public class TaskController {
     public void deleteTask(@RequestBody Task task) {
         taskService.deleteTask(task);
     }
+
 }
 
 

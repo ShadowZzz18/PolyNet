@@ -1,6 +1,5 @@
 package com.polytech.polynet.repository;
 
-
 import com.polytech.polynet.business.Task;
 
 import javax.persistence.EntityManager;
@@ -9,7 +8,6 @@ import javax.persistence.Query;
 import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import java.util.List;
-
 
 @Transactional
 public class JpaTaskRepository implements TaskRepository {
