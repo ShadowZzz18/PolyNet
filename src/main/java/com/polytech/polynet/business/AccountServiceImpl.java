@@ -1,6 +1,8 @@
 package com.polytech.polynet.business;
 
+import com.polytech.polynet.model.User;
 import com.polytech.polynet.repository.AccountRepository;
+
 import java.util.List;
 
 public class AccountServiceImpl implements AccountService {
@@ -19,6 +21,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public List<User> getUsers() {
         return accountRepository.findAllUsers();
+    }
+
+    @Override
+    public boolean login(String username, String password) {
+        return accountRepository.login(username, password);
     }
 
 }

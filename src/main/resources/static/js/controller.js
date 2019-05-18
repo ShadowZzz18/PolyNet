@@ -7,7 +7,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         var password = $scope.password;
         var verif = $scope.verif;
 
-        if(verif != password){
+        if(verif != password) {
             return;
         }
 
@@ -22,14 +22,14 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
             })
             .error(function(err) {
                 console.log(err);
-            })
-    }
+            });
+    };
 
     $scope.getTasks = function() {
         $http.get('/getTasks').then(function(res) {
             $scope.tasks = res.data;
         });
-    }
+    };
 
     $scope.insertTask = function() {
         var content = $scope.TaskContent;
@@ -45,22 +45,37 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
             $scope.getTasks()
         }, function(res) {
                 console.log(res)
-        })
+        });
         $scope.TaskContent = '';
-    }
+    };
 
     $scope.deleteTask = function(index) {
         var req = {
             task : $scope.tasks[index]
-        }
+        };
 
         $http.post('/deleteTask', req).then(function(res) {
-            console.log("succeed")
-            $scope.getTasks()
+            console.log("succeed");
+            $scope.getTasks();
         }, function(res) {
             console.log("error")
-        })
-    }
+        });
+    };
 
-    $scope.getTasks()
+    $scope.login = function() {
+        var req = {
+            username : $scope.username,
+            password : $scope.password
+        };
+
+        $http.post('/loginUser', req).then(function(res) {
+            console.log(res);
+            if(res.data == "true") {
+                console.log("Authentification reussie !")
+                //location.href = '/';
+            }
+        });
+    };
+
+    $scope.getTasks();
 });

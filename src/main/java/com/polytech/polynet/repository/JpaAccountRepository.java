@@ -1,6 +1,6 @@
 package com.polytech.polynet.repository;
 
-import com.polytech.polynet.business.User;
+import com.polytech.polynet.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -30,6 +30,20 @@ public class JpaAccountRepository implements AccountRepository {
     @Override
     public void register(User user) {
         AccountEntityManager.persist(user);
+    }
+
+    @Override
+    public boolean login(String username, String password) {
+        return !AccountEntityManager.createQuery("SELECT s FROM User s WHERE s.username = :username AND s.password = :password")
+                            .setParameter("username", username)
+                            .setParameter("password", password)
+                            .getResultList().isEmpty();
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        User user = AccountEntityManager.find(User.class, username);
+        return user;
     }
 
 }

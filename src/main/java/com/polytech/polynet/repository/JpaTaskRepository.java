@@ -1,6 +1,6 @@
 package com.polytech.polynet.repository;
 
-import com.polytech.polynet.business.Task;
+import com.polytech.polynet.model.Task;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

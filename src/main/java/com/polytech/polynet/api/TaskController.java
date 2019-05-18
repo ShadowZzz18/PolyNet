@@ -1,6 +1,6 @@
 package com.polytech.polynet.api;
 
-import com.polytech.polynet.business.Task;
+import com.polytech.polynet.model.Task;
 import com.polytech.polynet.business.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
