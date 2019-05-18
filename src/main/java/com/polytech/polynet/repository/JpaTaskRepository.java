@@ -17,7 +17,7 @@ public class JpaTaskRepository implements TaskRepository {
     private DataSource datasource;
 
     @PersistenceContext
-    EntityManager entityManager;
+    EntityManager TaskEntityManager;
 
     public JpaTaskRepository(DataSource datasource) {
         this.datasource = datasource;
@@ -25,13 +25,20 @@ public class JpaTaskRepository implements TaskRepository {
 
     @Override
     public List<Task> findAllTasks() {
-        Query query = entityManager.createQuery("SELECT s FROM Task s");
+        Query query = TaskEntityManager.createQuery("SELECT s FROM Task s");
         return query.getResultList();
     }
 
     @Override
-    public void save(Task task) {
-        entityManager.persist(task);
+    public void insertTask(Task task) {
+        TaskEntityManager.persist(task);
+    }
+
+    @Override
+    public void deleteTask(Task task) {
+       TaskEntityManager.createQuery("DELETE FROM Task WHERE id = :id")
+               .setParameter("id", task.getId())
+               .executeUpdate();
     }
 
 }

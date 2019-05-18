@@ -15,7 +15,7 @@ public class JpaAccountRepository implements AccountRepository {
     private DataSource datasource;
 
     @PersistenceContext
-    EntityManager entityManager;
+    EntityManager AccountEntityManager;
 
     public JpaAccountRepository(DataSource datasource) {
         this.datasource = datasource;
@@ -23,13 +23,13 @@ public class JpaAccountRepository implements AccountRepository {
 
     @Override
     public List<User> findAllUsers() {
-        Query query = entityManager.createQuery("SELECT s FROM User s");
+        Query query = AccountEntityManager.createQuery("SELECT s FROM User s");
         return query.getResultList();
     }
 
     @Override
     public void register(User user) {
-        entityManager.persist(user);
+        AccountEntityManager.persist(user);
     }
 
 }
