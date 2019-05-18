@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="Polynet">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/creation.css">
+    <script src="./js/controller.js"></script>
+    <title>Création de compte</title>
+</head>
+
+<body ng-controller="MainController">
+<div class="row navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <i class="fas fa-home icon-home"></i>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            </li>
+        </ul>
+        <button class =" btn btn-info" onclick="location.href = '/login'"> Se connecter</button>
+    </nav>
+</div>
+<div class="container">
+    <div class="container encadrure">
+        <div class="row titre">
+            <h1>Création de compte</h1>
+        </div>
+        <div class="row formulaire">
+            <form ng-submit="register()">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Identifiant" ng-model="username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Mot de passe" ng-model="password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Confirmation mot de passe" ng-model="verif" required>
+                </div>
+                <button type="submit" class="btn btn-primary bouton-valider">Valider</button>
+            </form>
+            <ul class="list-group" ng-repeat="task in stories">
+                <li class="list-group-item active">{{task.content}}</li>
+                <hr>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

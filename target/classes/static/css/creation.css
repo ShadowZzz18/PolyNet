@@ -1,0 +1,56 @@
+body {
+    font-family: "Ubuntu", Times, serif;
+}
+
+.titre {
+    display: block;
+    margin: 0;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.formulaire {
+    display: block;
+    margin: auto;
+    padding-top: 5%;
+    max-width: 80%;
+}
+
+.bouton-valider {
+    width: 100%;
+    margin-top: 7%;
+    margin-bottom: 8%;
+    font-weight: bold;
+}
+
+
+.bouton-connexion {
+    color: white;
+}
+
+
+.encadrure {
+    margin-top: 8%;
+    max-width: 50%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0px #656565;
+}
+
+.navigation {
+    display: block;
+    margin: 0;
+}
+
+.icon {
+    background-color: white;
+}
+
+.icon-home {
+    color : #17a2b8;
+    font-size: 30px;
+}
+
+.navbar {
+    max-width: 100%;
+    width: 100%;
+}
