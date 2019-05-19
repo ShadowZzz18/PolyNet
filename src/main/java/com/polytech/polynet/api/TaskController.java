@@ -36,6 +36,11 @@ public class TaskController {
         taskService.updateTask(task.getId(),task.getContent());
     }
 
+    @PostMapping("/checkTask")
+    public void checkTask(@RequestBody Task task) {
+        taskService.checkTask(task.getId(),task.isDone());
+    }
+
 }
 
 

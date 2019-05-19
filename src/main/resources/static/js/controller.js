@@ -34,10 +34,12 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
     $scope.insertTask = function() {
         var content = $scope.TaskContent;
         var username = "test";
+        var done = false;
 
         var req = {
             content : content,
-            username : username
+            username : username,
+            done : done
         };
 
         $http.post('/insertTask', req).then(function(res) {
@@ -86,12 +88,37 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
         var req = {
             id : TaskToUpdate.id,
-            content : TaskToUpdate.content
+            content : TaskToUpdate.content,
         };
 
         $http.post('/updateTask', req).then(function(res) {
             console.log("succeed")
             $scope.getTasks()
+        }, function(res) {
+            console.log("error")
+        })
+    }
+
+    $scope.checkTask = function(index) {
+
+        var TaskToCheck = $scope.tasks[index];
+        TaskToCheck.done = !TaskToCheck.done;
+
+        var req = {
+            id : TaskToCheck.id,
+            done : TaskToCheck.done
+        };
+
+        $http.post('/checkTask',req).then(function(res) {
+            if(TaskToCheck.done) {
+                console.log(res)
+                console.log(TaskToCheck.content + ' checked');
+            }
+
+           if(!TaskToCheck.done){
+               console.log(res)
+               console.log(TaskToCheck.content + ' unchecked');
+            }
         }, function(res) {
             console.log("error")
         })
