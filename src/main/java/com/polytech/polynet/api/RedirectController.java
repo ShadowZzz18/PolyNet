@@ -11,6 +11,11 @@ public class RedirectController {
         return "/login.html";
     }
 
+    @GetMapping("/login?error")
+    public String loginError() {
+        return "/login.html";
+    }
+
     @GetMapping("/")
     public String home() {
         return "/index.html";
