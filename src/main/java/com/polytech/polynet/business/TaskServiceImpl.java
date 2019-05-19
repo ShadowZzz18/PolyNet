@@ -29,5 +29,10 @@ public class TaskServiceImpl implements TaskService {
         taskRepository.updateTask(id,content);
     }
 
+    @Override
+    public void checkTask(int id, boolean done) {
+        taskRepository.checkTask(id, done);
+    }
+
 
 }

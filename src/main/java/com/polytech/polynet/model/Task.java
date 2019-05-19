@@ -18,6 +18,9 @@ public class Task {
     @Column(name="username")
     private String username;
 
+    @Column(name="done")
+    private boolean done;
+
     public Task() {}
 
     public Task(String content) {
@@ -28,6 +31,11 @@ public class Task {
 
         this.id = id;
         this.content = content;
+    }
+
+    public Task(int id, boolean done) {
+        this.id = id;
+        this.done = done;
     }
 
     public Task(String content, String username) {
@@ -65,5 +73,13 @@ public class Task {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }

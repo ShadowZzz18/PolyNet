@@ -14,4 +14,6 @@ public interface TaskService {
     
     void updateTask(int id, String content);
 
+    void checkTask(int id, boolean done);
+
 }

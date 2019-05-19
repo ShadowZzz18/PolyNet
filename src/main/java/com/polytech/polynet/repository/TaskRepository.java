@@ -14,4 +14,6 @@ public interface TaskRepository {
     
     void updateTask(int id, String content);
 
+    void checkTask(int id, boolean done);
+
 }
