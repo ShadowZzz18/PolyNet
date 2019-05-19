@@ -1,6 +1,11 @@
 angular.module('Polynet', []).controller('MainController', function ($scope, $http) {
 
     $scope.tasks = [];
+    $scope.modalIndex = null;
+
+    $scope.setModalFocus = function(id) {
+        $scope.modalIndex = id;
+    };
 
     $scope.register = function() {
         var username = $scope.username;
@@ -78,8 +83,8 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
     $scope.updateTask = function(index) {
 
         var TaskToUpdate = $scope.tasks[index];
-        var contents = document.getElementsByClassName("task-name")
-        TaskToUpdate.content = contents[index].value;
+        TaskToUpdate.content = $scope.EditContent;
+        $scope.EditContent = "";
 
         var req = {
             id : TaskToUpdate.id,
