@@ -8,6 +8,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         var verif = $scope.verif;
 
         if(verif != password) {
+            $scope.erreurRegister = "Les mots de passe sont différents";
             return;
         }
 
@@ -18,10 +19,13 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
         $http.post("/register", req)
             .success(function(res) {
-                console.log("register succeed");
+                console.log(res);
             })
             .error(function(err) {
-                console.log(err);
+                console.log(err.status);
+                if(err.status == 500) {
+
+                }
             });
     };
 

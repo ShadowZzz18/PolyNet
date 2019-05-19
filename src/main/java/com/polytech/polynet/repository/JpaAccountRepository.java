@@ -1,5 +1,6 @@
 package com.polytech.polynet.repository;
 
+import com.polytech.polynet.model.Authority;
 import com.polytech.polynet.model.User;
 
 import javax.persistence.EntityManager;
@@ -30,6 +31,7 @@ public class JpaAccountRepository implements AccountRepository {
     @Override
     public void register(User user) {
         AccountEntityManager.persist(user);
+        AccountEntityManager.persist(new Authority(user.getUsername(), 1));
     }
 
     @Override
