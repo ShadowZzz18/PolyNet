@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TaskRepository {
 
-    List<Task> findAllTasks();
+    List<Task> findAllTasks(String username);
 
     void insertTask(Task task);
 

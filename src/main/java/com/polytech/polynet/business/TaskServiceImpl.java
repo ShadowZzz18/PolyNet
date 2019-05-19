@@ -12,8 +12,8 @@ public class TaskServiceImpl implements TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public List<Task> getTasks() {
-        return taskRepository.findAllTasks();
+    public List<Task> getTasks(String username) {
+        return taskRepository.findAllTasks(username);
     }
 
     @Override

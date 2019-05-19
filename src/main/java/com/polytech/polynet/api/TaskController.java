@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -17,8 +18,9 @@ public class TaskController {
     TaskService taskService;
 
     @GetMapping("/getTasks")
-    public List<Task> getTasks() {
-        return taskService.getTasks();
+    public List<Task> getTasks(Principal p) {
+        String username = p.getName();
+        return taskService.getTasks(username);
     }
 
     @PostMapping("/insertTask")

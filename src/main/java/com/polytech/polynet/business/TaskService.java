@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TaskService {
 
-    List<Task> getTasks();
+    List<Task> getTasks(String username);
 
     void insertTask(Task task);
 

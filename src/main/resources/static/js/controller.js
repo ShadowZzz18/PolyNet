@@ -65,6 +65,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         });
     };
 
+    /*
     $scope.login = function() {
         var req = {
             username : $scope.username,
@@ -79,6 +80,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
             }
         });
     };
+    */
 
     $scope.updateTask = function(index){
 
