@@ -26,4 +26,7 @@ public class RedirectController {
         return "/creation.html";
     }
 
+    @GetMapping("/todolist")
+    public String todolist() {return "/todolist.html"; }
+
 }
