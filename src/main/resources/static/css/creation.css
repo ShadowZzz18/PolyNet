@@ -54,3 +54,9 @@ body {
     max-width: 100%;
     width: 100%;
 }
+
+#erreurRegister {
+    text-align: center;
+    padding-bottom: 15px;
+    color: red;
+}
