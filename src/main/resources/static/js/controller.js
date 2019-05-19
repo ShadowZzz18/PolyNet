@@ -8,7 +8,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         var verif = $scope.verif;
 
         if(verif != password) {
-            $scope.erreurRegister = "Les mots de passe sont différents";
+            $scope.errorRegister = "Passwords are different";
             return;
         }
 
@@ -24,7 +24,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
             .error(function(err) {
                 console.log(err.status);
                 if(err.status == 500) {
-                    $scope.erreurRegister = "Ce compte existe déjà";
+                    $scope.errorRegister = "User already exists";
                 }
             });
     };
