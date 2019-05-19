@@ -24,7 +24,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
             .error(function(err) {
                 console.log(err.status);
                 if(err.status == 500) {
-
+                    $scope.erreurRegister = "Ce compte existe déjà";
                 }
             });
     };
@@ -67,24 +67,14 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         });
     };
 
-    /*
-    $scope.login = function() {
-        var req = {
-            username : $scope.username,
-            password : $scope.password
-        };
-
-        $http.post('/loginUser', req).then(function(res) {
-            console.log(res);
-            if(res.data == "true") {
-                console.log("Authentification reussie !")
-                //location.href = '/';
-            }
-        });
+    $scope.verifLogin = function() {
+        var param = location.search.split('?')[1];
+        console.log(param);
+        if(param)
+            $scope.errorLogin = "Authentication failure";
     };
-    */
 
-    $scope.updateTask = function(index){
+    $scope.updateTask = function(index) {
 
         var TaskToUpdate = $scope.tasks[index];
         var contents = document.getElementsByClassName("task-name")
@@ -101,7 +91,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         }, function(res) {
             console.log("error")
         })
-    }
+    };
 
     $scope.checkTask = function(index) {
 
@@ -115,18 +105,21 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
         $http.post('/checkTask',req).then(function(res) {
             if(TaskToCheck.done) {
-                console.log(res)
+                console.log(res);
                 console.log(TaskToCheck.content + ' checked');
             }
 
            if(!TaskToCheck.done){
-               console.log(res)
+               console.log(res);
                console.log(TaskToCheck.content + ' unchecked');
             }
-        }, function(res) {
-            console.log("error")
-        })
-    }
 
-    $scope.getTasks()
+            $scope.getTasks();
+        }, function(res) {
+            console.log("error");
+        })
+    };
+
+    $scope.getTasks();
+
 });
