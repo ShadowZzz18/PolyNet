@@ -33,12 +33,10 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
     $scope.insertTask = function() {
         var content = $scope.TaskContent;
-        var username = "test";
         var done = false;
 
         var req = {
             content : content,
-            username : username,
             done : done
         };
 

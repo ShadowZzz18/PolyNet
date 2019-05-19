@@ -24,9 +24,10 @@ public class TaskController {
     }
 
     @PostMapping("/insertTask")
-    public void insertTask(@RequestBody Task task){
+    public void insertTask(@RequestBody Task task, Principal p) {
+        task.setUsername(p.getName());
         taskService.insertTask(task);
-        }
+    }
 
     @PostMapping("/deleteTask")
     public void deleteTask(@RequestBody Task task) {
