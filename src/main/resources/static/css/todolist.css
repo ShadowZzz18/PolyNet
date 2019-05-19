@@ -5,3 +5,9 @@ body {
     padding: 40px 15px;
     text-align: center;
 }
+
+ul.checked{
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}

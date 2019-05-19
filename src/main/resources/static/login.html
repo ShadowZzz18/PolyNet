@@ -28,12 +28,13 @@
                 <input type="text" id="username" class="fadeIn second" name="username" placeholder="login" required>
                 <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
                 <input type="submit" class="fadeIn fourth" value="Log In">
-                <p id="errorLogin" ng-model="errorLogin">ERREUR</p>
+                <p id="erreur" ng-bind="erreurLogin"></p>
             </form>
 
             <!-- Remind Password -->
             <div id="formFooter">
-                <a class="underlineHover" href="#" onclick="alert('Tant pis !')">Forgot Password?</a>
+                <a class="underlineHover" href="#" onclick="alert('Unlucky for you 🤷‍')">Forgot Password?</a>
+                <a class="underlineHover sign-up" href="/signup">Sign up</a>
             </div>
 
         </div>

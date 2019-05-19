@@ -21,7 +21,7 @@ public class RedirectController {
         return "/index.html";
     }
 
-    @GetMapping("/creation")
+    @GetMapping("/signup")
     public String creation() {
         return "/creation.html";
     }
