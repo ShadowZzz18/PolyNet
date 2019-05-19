@@ -20,6 +20,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         $http.post("/register", req)
             .success(function(res) {
                 console.log(res);
+                location.href = "/todolist";
             })
             .error(function(err) {
                 console.log(err.status);
