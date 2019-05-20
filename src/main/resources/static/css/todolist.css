@@ -258,6 +258,11 @@ input[type="checkbox"]{
     background-color: #0eb0b7;
     border-color: #0eb0b7;
     font-size: 12pt;
+    -moz-box-shadow: 0px 0px 1px 1px #656565;
+    -webkit-box-shadow: 0px 0px 1px 1px #656565;
+    -o-box-shadow: 0px 0px 1px 1px #656565;
+    box-shadow: 0px 0px 1px 1px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=1);
 }
 
 #logout_button:hover {
@@ -265,7 +270,7 @@ input[type="checkbox"]{
     border-color: #368b8e;
 }
 
-.backgroundTodo{
+.backgroundTodo {
     background-image: url('../img/deskwallpaper.jpg');
     background-position: center top;
     background-size: cover;
