@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes:target/dependency/* com.polytech.polynet.AppStarter
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/tasklist-1.0-SNAPSHOT.jar
