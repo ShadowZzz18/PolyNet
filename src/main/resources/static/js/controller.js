@@ -6,10 +6,19 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
     $scope.setModalFocus = function(id) {
         $scope.modalIndex = id;
+        setTimeout(function (){
+            document.getElementById('editContent').focus();
+        }, 500);
     };
 
     $scope.closeModal = function() {
         $scope.TaskContent = "";
+    };
+
+    $scope.onOpenAddModal = function() {
+        setTimeout(function (){
+            document.getElementById('addContent').focus();
+        }, 500);
     };
 
     $scope.register = function() {

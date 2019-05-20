@@ -48,7 +48,7 @@
             </span>
         </span>
     </div>
-    <div id="add-todo" data-toggle="modal" data-target="#exampleModal">
+    <div id="add-todo" data-toggle="modal" data-target="#exampleModal" ng-click="onOpenAddModal()">
         <i class="fa fa-plus"></i>
         Add an Item
     </div>
@@ -65,7 +65,7 @@
             </div>
             <form ng-submit="insertTask()">
                 <div class="modal-body">
-                    <input class="form-control" type="text" ng-model="TaskContent" placeholder="What to do?">
+                    <input class="form-control" id="addContent" type="text" ng-model="TaskContent" placeholder="What to do?">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="closeModal()">Close</button>
@@ -88,7 +88,7 @@
             </div>
             <form ng-submit="updateTask(modalIndex)">
                 <div class="modal-body">
-                    <input class="form-control" type="text" ng-value="tasks[modalIndex].content" ng-model="EditContent">
+                    <input class="form-control" id="editContent" type="text" ng-value="tasks[modalIndex].content" ng-model="EditContent">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
