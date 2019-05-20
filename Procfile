@@ -1,1 +1,1 @@
-web: java -jar tasklist.jar -Dserver.port=8080
+web: java $JAVA_OPTS -jar tasklist.jar -Dserver.port=$PORT $JAR_OPTS
