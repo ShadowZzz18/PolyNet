@@ -54,6 +54,10 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         var content = $scope.TaskContent;
         var done = false;
 
+        if(content == "" || content == undefined || content == null) {
+            return;
+        }
+
         var req = {
             content : content,
             done : done
