@@ -23,9 +23,4 @@ public class AccountServiceImpl implements AccountService {
         return accountRepository.findAllUsers();
     }
 
-    @Override
-    public boolean login(String username, String password) {
-        return accountRepository.login(username, password);
-    }
-
 }

@@ -34,18 +34,4 @@ public class JpaAccountRepository implements AccountRepository {
         AccountEntityManager.persist(new Authority(user.getUsername(), 1));
     }
 
-    @Override
-    public boolean login(String username, String password) {
-        return !AccountEntityManager.createQuery("SELECT s FROM User s WHERE s.username = :username AND s.password = :password")
-                            .setParameter("username", username)
-                            .setParameter("password", password)
-                            .getResultList().isEmpty();
-    }
-
-    @Override
-    public User findByUsername(String username) {
-        User user = AccountEntityManager.find(User.class, username);
-        return user;
-    }
-
 }

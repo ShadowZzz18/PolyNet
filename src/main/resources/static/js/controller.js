@@ -2,9 +2,14 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
     $scope.tasks = [];
     $scope.modalIndex = null;
+    $scope.connectedUser = null;
 
     $scope.setModalFocus = function(id) {
         $scope.modalIndex = id;
+    };
+
+    $scope.closeModal = function() {
+        $scope.TaskContent = "";
     };
 
     $scope.register = function() {
@@ -39,6 +44,10 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         $http.get('/getTasks').then(function(res) {
             $scope.tasks = res.data;
         });
+        $http.get('/getConnectedUser').then(function(res) {
+            console.log(res);
+            $scope.connectedUser = res.data;
+        });
     };
 
     $scope.insertTask = function() {
@@ -57,10 +66,10 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
                 console.log(res)
         });
         $scope.TaskContent = '';
+        $('#exampleModal').modal('hide');
     };
 
     $scope.deleteTask = function(id) {
-
         var req = {
             id : id
         };
@@ -76,7 +85,7 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
     $scope.verifLogin = function() {
         var param = location.search.split('?')[1];
         console.log(param);
-        if(param)
+        if(param && param != "logout")
             $scope.errorLogin = "Authentication failure";
     };
 
@@ -92,11 +101,12 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
         };
 
         $http.post('/updateTask', req).then(function(res) {
-            console.log("succeed")
-            $scope.getTasks()
+            console.log("succeed");
+            $scope.getTasks();
         }, function(res) {
             console.log("error")
         })
+        $('#editModal').modal('hide');
     };
 
     $scope.checkTask = function(index) {

@@ -9,21 +9,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
+import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class AccountController {
 
     @Autowired
     AccountService accountService;
-
-    @PostMapping("/loginUser")
-    public boolean login(@RequestBody User user) {
-        boolean verif = accountService.login(user.getUsername(), user.getPassword());
-
-        return verif;
-    }
 
     @PostMapping("/register")
     public void register(@RequestBody User user) {
@@ -41,6 +36,12 @@ public class AccountController {
     public List<User> getUsers() {
         System.out.println(accountService.getUsers());
         return accountService.getUsers();
+    }
+
+    @GetMapping("/getConnectedUser")
+    public Optional<String> getConnectedUser(Principal p) {
+        Optional<String> username = Optional.ofNullable(p.getName());
+        return username;
     }
 
 }

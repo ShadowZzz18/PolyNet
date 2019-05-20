@@ -10,8 +10,4 @@ public interface AccountRepository {
 
     void register(User user);
 
-    boolean login(String username, String password);
-
-    User findByUsername(String username);
-
 }
