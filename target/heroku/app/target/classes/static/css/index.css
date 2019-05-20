@@ -1,0 +1,42 @@
+body,h1 {font-family: "Arial", sans-serif}
+body, html {height: 100%}
+
+.background {
+    background-image: url('../img/todolist.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.myButton {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    -moz-box-shadow: 3px 4px 0px 0px #96a0a3;
+    -webkit-box-shadow: 3px 4px 0px 0px #96a0a3;
+    box-shadow: 3px 4px 0px 0px #96a0a3;
+    background-color:transparent;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    border:2px solid #ffffff;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20pt;
+    padding:8px 36px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    text-align: center;
+    max-width: 80%;
+}
+
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+#authors{
+    color: white;
+}
+
