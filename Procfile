@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.polytech.polynet.AppStarter
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.polytech.polynet.AppStarter -Dserver.port=$PORT
