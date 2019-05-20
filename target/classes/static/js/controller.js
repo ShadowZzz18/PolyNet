@@ -95,6 +95,10 @@ angular.module('Polynet', []).controller('MainController', function ($scope, $ht
 
     $scope.updateTask = function(index) {
 
+        if($scope.EditContent == "" || $scope.EditContent == undefined || $scope.EditContent == null) {
+            return;
+        }
+
         var TaskToUpdate = $scope.tasks[index];
         TaskToUpdate.content = $scope.EditContent;
         $scope.EditContent = "";
