@@ -19,7 +19,7 @@ h1{
     font-size:30px;
     margin:0;
     font-weight:200;
-    color:#454545;
+    color:white;
 }
 h1 .fa-check{
     font-size:30px;
@@ -263,4 +263,11 @@ input[type="checkbox"]{
 #logout_button:hover {
     background-color: #368b8e;
     border-color: #368b8e;
+}
+
+.backgroundTodo{
+    background-image: url('../img/deskwallpaper.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

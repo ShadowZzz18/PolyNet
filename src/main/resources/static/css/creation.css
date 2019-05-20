@@ -273,3 +273,9 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 #errorRegister {
     color: red;
 }
+
+.backgroundSignup{
+    background-image: url('../img/wood-background.jpg');
+    background-position: center top;
+    background-size: cover;
+}

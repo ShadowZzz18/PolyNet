@@ -274,3 +274,9 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 #errorLogin{
     color: red;
 }
+
+.backgroundLogin{
+    background-image: url('../img/wood-background.jpg');
+    background-position: center top;
+    background-size: cover;
+}
